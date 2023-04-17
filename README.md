@@ -53,7 +53,7 @@ In case these don't yet exist for your distro, there are two ways to build this 
 
 * Build towr:
   ```bash
-  git clone https://github.com/ethz-adrl/towr.git && cd towr/towr
+  git clone https://github.com/fan-ziqi/towr.git && cd towr/towr
   mkdir build && cd build
   cmake .. -DCMAKE_BUILD_TYPE=Release
   make
@@ -87,9 +87,9 @@ We provide a [ROS]-wrapper for the pure cmake towr library, which adds a keyboar
   ```bash
   cd catkin_workspace/src
   git clone https://github.com/ethz-adrl/ifopt.git
-  git clone https://github.com/ethz-adrl/towr.git
+  git clone https://github.com/fan-ziqi/towr.git
   cd ..
-  catkin_make_isolated -DCMAKE_BUILD_TYPE=Release # or `catkin build`
+  catkin_make_isolated -DCMAKE_BUILD_TYPE=Debug # or `catkin build`
   source ./devel_isolated/setup.bash
   ```
   
