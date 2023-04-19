@@ -111,7 +111,7 @@ namespace towr
 			// deviation of 10e-4, which is fine. What to watch out for is deviations > 10e-2.
 			// solver_->SetOption("derivative_test", "first-order");
 
-			solver_->SetOption("max_cpu_time", 100.0); //40
+			solver_->SetOption("max_cpu_time", 40.0);
 			solver_->SetOption("print_level", 5);
 
 			if(msg.play_initialization)
