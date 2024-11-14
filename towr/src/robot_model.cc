@@ -33,34 +33,41 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <towr/models/examples/biped_model.h>
 #include <towr/models/examples/hyq_model.h>
 #include <towr/models/examples/anymal_model.h>
+#include <towr/models/examples/cyberdog_model.h>
 
-namespace towr {
-
-
-RobotModel::RobotModel(Robot robot)
+namespace towr
 {
-  switch (robot) {
-    case Monoped:
-      dynamic_model_   = std::make_shared<MonopedDynamicModel>();
-      kinematic_model_ = std::make_shared<MonopedKinematicModel>();
-      break;
-    case Biped:
-      dynamic_model_   = std::make_shared<BipedDynamicModel>();
-      kinematic_model_ = std::make_shared<BipedKinematicModel>();
-      break;
-    case Hyq:
-      dynamic_model_   = std::make_shared<HyqDynamicModel>();
-      kinematic_model_ = std::make_shared<HyqKinematicModel>();
-      break;
-    case Anymal:
-      dynamic_model_   = std::make_shared<AnymalDynamicModel>();
-      kinematic_model_ = std::make_shared<AnymalKinematicModel>();
-      break;
-    default:
-      assert(false); // Error: Robot model not implemented.
-      break;
-  }
-}
+
+
+	RobotModel::RobotModel(Robot robot)
+	{
+		switch(robot)
+		{
+			case Monoped:
+				dynamic_model_ = std::make_shared<MonopedDynamicModel>();
+				kinematic_model_ = std::make_shared<MonopedKinematicModel>();
+				break;
+			case Biped:
+				dynamic_model_ = std::make_shared<BipedDynamicModel>();
+				kinematic_model_ = std::make_shared<BipedKinematicModel>();
+				break;
+			case Hyq:
+				dynamic_model_ = std::make_shared<HyqDynamicModel>();
+				kinematic_model_ = std::make_shared<HyqKinematicModel>();
+				break;
+			case Anymal:
+				dynamic_model_ = std::make_shared<AnymalDynamicModel>();
+				kinematic_model_ = std::make_shared<AnymalKinematicModel>();
+				break;
+			case Cyberdog:
+				dynamic_model_ = std::make_shared<CyberdogDynamicModel>();
+				kinematic_model_ = std::make_shared<CyberdogKinematicModel>();
+				break;
+			default:
+				assert(false); // Error: Robot model not implemented.
+				break;
+		}
+	}
 
 
 } // namespace towr

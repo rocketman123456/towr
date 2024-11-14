@@ -36,7 +36,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <towr/models/dynamic_model.h>
 #include <towr/models/kinematic_model.h>
 
-namespace towr {
+namespace towr
+{
 
 /**
  * @defgroup Robots
@@ -60,35 +61,41 @@ namespace towr {
  *
  * @ingroup Robots
  */
-struct RobotModel {
-  /**
-   * @brief Robots for which kinematic and dynamic models are implemented.
-   *
-   * See folder: \ref include/towr/models/examples for more information.
-   * @ingroup Robots
-   */
-  enum Robot { Monoped, ///< one-legged hopper
-               Biped,   ///< two-legged
-               Hyq,     ///< four-legged robot from IIT
-               Anymal,  ///< four-legged robot from Anybotics
-               ROBOT_COUNT };
+	struct RobotModel
+	{
+		/**
+		 * @brief Robots for which kinematic and dynamic models are implemented.
+		 *
+		 * See folder: \ref include/towr/models/examples for more information.
+		 * @ingroup Robots
+		 */
+		enum Robot
+		{
+			Monoped,  ///< one-legged hopper
+			Biped,    ///< two-legged
+			Hyq,      ///< four-legged robot from IIT
+			Anymal,   ///< four-legged robot from Anybotics
+			Cyberdog, ///< four-legged robot from Cyberdog
+			ROBOT_COUNT
+		};
 
 
-  RobotModel() = default;
-  RobotModel(Robot robot);
+		RobotModel() = default;
+		RobotModel(Robot robot);
 
-  KinematicModel::Ptr kinematic_model_;
-  DynamicModel::Ptr   dynamic_model_;
-};
+		KinematicModel::Ptr kinematic_model_;
+		DynamicModel::Ptr dynamic_model_;
+	};
 
 
-const static std::map<RobotModel::Robot, std::string> robot_names =
-{
-  {RobotModel::Monoped, "Monoped"},
-  {RobotModel::Biped,   "Biped"},
-  {RobotModel::Hyq,     "Hyq"},
-  {RobotModel::Anymal,  "Anymal"}
-};
+	const static std::map<RobotModel::Robot, std::string> robot_names =
+			{
+					{RobotModel::Monoped,  "Monoped"},
+					{RobotModel::Biped,    "Biped"},
+					{RobotModel::Hyq,      "Hyq"},
+					{RobotModel::Anymal,   "Anymal"},
+					{RobotModel::Cyberdog, "Cyberdog"}
+			};
 
 } /* namespace towr */
 
